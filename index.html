@@ -7,7 +7,7 @@
 		<title>reveal.js</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/sky.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -24,8 +24,229 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+                    <h1>Learn Javascript</h1>
+                </section>
+				<section>
+                    <h2>Instructor</h2>
+                    <h4>Vladimir Cespedes</h4>
+                    <p>@vladwelt</p>
+                </section>
+                <section>
+                    <section>
+                        <h1>Dia 0</h1>
+                    </section>
+                    <section>
+                        <h2>Objetivos</h2>
+                        <ul>
+                            <li>Generalidades</li>
+                            <li>Diseño web</li>
+                            <li>Estructura del lenguaje</li>
+                            <li>Variables y tipos</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>GENERALIDADES</h2>
+                    </section>
+                    <section>
+                        <h2>Que es Javascript(JS)</h2>
+                        <ul>
+                            <li>JavaScript es un lenguaje de programación interpretado, dialecto del estándar ECMAScript.</li>
+                            <li>JavaScript se utiliza principalmente en el lado del cliente (client-side).</li>
+                            <li>JavaScript nos permite desarrollar paginas web dinamicas.</li>
+                        </ul>
+                        <p> Javascript se define como orientado a objetos, basado en prototipos, imperativo, débilmente tipado y dinámico. <small>https://es.wikipedia.org/wiki/JavaScript</small></p>
+                    </section>
+                    <section>
+                        <h3>JavaScript es un lenguaje del lado del cliente</h3>
+                        <img  width="650" src="client-server.jpg"></img>
+                    </section>
+                    <section>
+                        <h2>DISEÑO WEB</h2>
+                    </section>
+                    <section data-background-transition="zoom" data-background="html.png" data-background-size="90vw">
+                    </section>
+                    <section>
+                        <h2>DISEÑO WEB</h2>
+                        <ul>
+                            <li class="fragment">Contenido</li>
+                            <p class="fragment">HTML</p>
+                            <li class="fragment">Presentacion</li>
+                            <p class="fragment">CSS</p>
+                            <li class="fragment">Comportamiento</li>
+                            <p class="fragment">JS</p>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>A Desarrollar</h2>
+                        <h4>Ejecucion del codigo</h4>
+                        <table>
+                            <tbody>
+                                <tr><th>Interpretado en la pagina web</th></tr>
+                                <tr><th>Interpretado en la consola</th></tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <h3>Interpretado en una pagina web</h3>
+                    <pre><code class="hljs">
+    <script>
+        alert('Hello World!');
+    </script>
+					</code></pre>
+
+                    </section>
+                    <section>
+                        <h3>Interpretado en una pagina web</h3>
+                    <pre><code class="hljs">
+    <script src="miscript.js"></script>
+					</code></pre>
+                    <pre><code class="hljs">
+    // miscript.js
+    alert('Hello World!');
+					</code></pre>
+
+
+                    </section>
+                    <section>
+                        <h2>ESTRUCTURA DEL LENGUAJE</h2>
+                        <table class="fragment">
+                            <tbody>
+                                <tr><th>Comentarios</th></tr>
+                                <tr><th>Literales</th></tr>
+                                <tr><th>Identificadores</th></tr>
+                                <tr><th>Punto y coma (;)</th></tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <h3>Comentarios</h3>
+                        <p>Dos formas de comentar</p>
+                        <pre><code class="hljs">
+        // Comentario de una linea
+
+        /* Comentario 
+            de 
+            muchas 
+            lineas
+        */
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Literales</h2>
+                        <table>
+                            <tbody>
+                                <tr>
+                                <th>Números enteros:</th><th>192</th>
+                                </tr>
+                                <tr>
+                                <th>Números flotantes:</th><th>  1.4</th>
+                                </tr>
+                                <tr>
+                                <th>Cadenas de texto:</th><th>"Hola mundo", 'Hola mundo'</th>
+                                </tr>
+                                <tr>
+                                <th>Valores lógicos:</th><th>true, false</th>
+                                </tr>
+                                <tr>
+                                <th>Expresiones regulares </th><th>  /[A-Za-z]/</th>
+                                </tr>
+                                <tr>
+                                <th>Valor nulo:</th><th> null</th>
+                                </tr>
+                                <tr>
+                                <th>Valor indefinido:</th><th>   undefined</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <h2>Identificadores</h2>
+                        <p>Los identificadores en javascript comienzan con una letra, una barra baja (_), o un caracter de dolar ($); seguidos por letras, números, barras bajas, y caracteres de dolar, por ejemplo:</p>
+                        <pre><code class="hljs">
+        var nombre;
+        var _nombre;
+        var $nombre;
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Punto y coma (;)</h2>
+                        <p>Es posible el uso del caracter (;) para la separación de sentencias, sin embargo, esta tambien puede omitirse si estos están en diferentes lineas</p>
+                        
+                        <p>Los interpretes de JavaScript, tratan a los fines de linea como final de una sentencia, si y solo si, la siguiente sentencia no puede interpretarse como continuación de la anterior.</p>
+                        <p>
+                        Pueden verse varios criterios para tomar una decisión.
+                        </p>
+                    </section>
+                    <section>
+                        <h2>VARIABLES</h2>
+                    </section>
+                    <section>
+                        <h2>VARIABLES</h2>
+                        <h4>Una variable es un contenedor para un valor.</h4>
+                        <p>El nombre que se refiere a una variable es llamada identificador</p>
+                    </section>
+                    <section>
+                        <h2>Palabras Reservadas</h2>
+                        <p>Algunas palabras reservadas que no podemos usar:</p>
+                        <pre><code class="hljs">
+            null true false break do instanceof typeof
+            case else new var catch finally return void
+            continue for switch while debugger function
+            this with default if throw delete in try
+            class enum extends super const export import
+
+            implements let private public yield
+            interface package protected static
+                        </code></pre>
+                        <p>No es necesario memorizar estas palabras, cuando las usemos incorrectamente, el programa generara SyntaxError exception.</p>
+                    </section>
+                    <section>
+                        <h2>VALORES Y TIPOS</h2>
+                    </section>
+                    <section>
+                        <h2>VALORES</h2>
+                        <p>Un valor representa el <strong>dato mas basico</strong> que nosotros podemos dar con un valor.</p>
+                        <h2>TIPO</h2>
+                        <p>Un tipo es un conjunto de valores de datos y hay exactamente 6 tipos.</p>
+                    </section>
+                    <section>
+                        <h3>Hay 5 tipos primitivos(non-Object)</h3>
+                        <table>
+                            <tbody>
+                                <tr><th>Number</th><th>.33 , -3.14, 011, 7e-2, -Infinity, NaN</th></tr>
+                                <tr><th>Boolean</th><th>true, false</th></tr>
+                                <tr><th>String</th><th>"", "Hello world!", "\n", "\"", 'w Single Quotes'</th></tr>
+                                <tr><th>Null</th><th>null</th></tr>
+                                <tr><th>Undefined</th><th>undefined</th></tr>
+                            </tbody>
+                        </table>
+                        <p>Cualquier valor de esta tabla, es llamado valor primitivo.</p>
+                    </section>
+                    <section>
+                        <h3>Y hay 1, el tipo objeto</h3>
+                        <pre><code class="hljs">
+    var miObjeto = {
+        atributo1 : "atributo 1",
+        atributo2 : "atributo 2",
+    }
+    var x1 = new Object();    // A new Object object
+    var x2 = new String();    // A new String object
+    var x3 = new Number();    // A new Number object
+    var x4 = new Boolean()    // A new Boolean object
+    var x5 = new Array();     // A new Array object
+    var x6 = new RegExp();    // A new RegExp object
+    var x7 = new Function();  // A new Function object
+    var x8 = new Date();      // A new Date object
+
+                        </code></pre>
+                        <p>Any value of this type is a reference to some “object”;
+                        sometimes we would simply call such value an object</p>
+                    </section>
+                </section>
+                <section>
+                    <h1>DIA 1</h2>
+                </section>
 			</div>
 		</div>
 
