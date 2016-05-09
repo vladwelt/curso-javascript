@@ -266,7 +266,7 @@
                         <pre><code  class="hljs" data-trim contenteditable>
     // var - palabra clave
     var numero = 3;
-    var cadena = "mi cadena xD."
+    var cadena = "mi cadena."
     var visible = true;
     var desconocido; // Undefined
     var conocido = null;
@@ -340,6 +340,245 @@ s.toUpperCase()      // => "HELLO, WORLD"
                         </code></pre>
                     </section>
                     <section>
+                        <h3>Manipulacion de valores logicos</h3>
+                        <h4>True y False</h4>
+                        <p>Son tambien falsos los siguientes valores</p>
+                        <ul>
+                            <li>Undefined</li>
+                            <li>0</li>
+                            <li>NaN</li>
+                            <li>null</li>
+                            <li>-0</li>
+                            <li>"" or ''</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Valor nulo y valor indefinido</h3>
+                        <p>Representan la ausencia de un valor en una variable o en el retorno de una funcion.</p>
+                        <div style="font-size: 24px;">
+                            <p>
+                            (nombre es undefined)
+                            </p>
+                            <p>
+                            Programador: ¿qué es nombre?
+                            </p>
+                            <p>
+                            Javascript: ¿nombre? ¿qué es un  nombre? No sé de qué hablas, ni siquiera has mencionado nombre antes. ¿No te referirás a otro lenguaje?
+                            </p>
+                            <p>
+                            (nombre = null)
+                            </p>
+                            <p>
+                            Programador: ¿qué es nombre?
+                            </p>
+                            <p>
+                            Javascript: no lo sé
+                            </p>
+                        </div>
+                        <p>Una de las mejores respuestas en <a href="http://stackoverflow.com/questions/801032/why-is-null-an-object-and-whats-the-difference-between-null-and-undefined">Stackoverflow</a></p>
+                    </section>
+                    <section>
+                        <h2>Condicionales</h2>
+                        <table>
+                            <tbody>
+                                <tr><th>if</th></tr>
+                                <tr><th>else if</th></tr>
+                                <tr><th>switch</th></tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <h2>if</h2>
+                        <pre><code  class="hljs" data-trim contenteditable>
+if (expresion) {
+    sentencias
+}
+                        </code></pre>
+                        <pre><code  class="hljs" data-trim contenteditable>
+if (expresion) {
+    sentencias
+} else {
+    sentencias
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>else if</h2>
+                        <pre><code  class="hljs" data-trim contenteditable>
+if(expresion) {
+    sentencias
+} else if(otra expresion) {
+    sentencias
+} else {
+    sentencias
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>switch</h2>
+                        <pre><code  class="hljs" data-trim contenteditable>
+switch(expresion) {
+    case 1:
+        sentencias
+        break
+    case n:
+        sentencias
+        break
+    default:
+        sentencias
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Iteradores</h2>
+                        <table>
+                            <tbody>
+                                <tr><td>while</td></tr>
+                                <tr><td>do while</td></tr>
+                                <tr><td>for</td></tr>
+                                <tr><td>for in</td></tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <h2>while</h2>
+                        <pre style="font-size: 24px;"><code  class="hljs" data-trim contenteditable>
+while(expresion){
+    sentencias
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>do while</h2>
+                        <pre style="font-size: 24px;"><code  class="hljs" data-trim contenteditable>
+do {
+    sentencias
+while(expresion)
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>for</h2>
+                        <pre style="font-size: 24px;"><code  class="hljs" data-trim contenteditable>
+for(inicializacion;evaluador;incrementador){
+    sentencias
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>for in</h2>
+                        <pre style="font-size: 24px;"><code  class="hljs" data-trim contenteditable>
+for(variable in coleccion){
+    sentencias
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Objetos</h2>
+                        <p>Un objeto es un coleccion de propiedades</p>
+                        <p>Una propiedad tiene un nombre y un valor</p>
+                    </section>
+                    <section>
+                        <h2>Objecto</h2>
+                        <p>El <strong>nombre de una propiedad</strong> es llamado clave, entoces <strong>un objeto</strong>
+                        puede ser considerado como <span class="fragment highlight-blue">una coleccion de clave-valor</span>.</p>
+                    </section>
+                    <section>
+                        <h2>Objeto</h2>
+                        <p>Un objeto en JavaScript puede ser definido de 3 maneras:</p>
+                        <table>
+                            <tbody>
+                                <tr><td>Definicion literal.</td></tr>
+                                <tr><td>Instanciación de clases.</td></tr>
+                                <tr><td>Creación a partir de un prototipo.</td></tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <h2>Definición literal</h2>
+                        <pre style="font-size: 24px;"><code  class="hljs" data-trim contenteditable>
+var pais = {
+    nombre : "Bolivia",
+    departamentos : ["Cochabamba", "La paz", "Santa Cruz"],
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Instanciación de clases</h2>
+                        <pre style="font-size: 24px;"><code  class="hljs" data-trim contenteditable>
+var primerObjeto =new Object();
+var cadena = new String('qwerty');
+var numero = new Number(2);
+var booleano = new Boolean();
+var secuencia = new Array();
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Prototipos</h2>
+                        <p>Un prototipo un objeto asociado al objeto que se esta definiendo, y del cual va a heredar propiedades.</p>
+                        <p>Es establecido cuando el objeto es creado.</p>
+                        <p>Puede accederse a el desde la variable prototype.</p>
+                    </section>
+                    <section>
+                        <h2>Prototipos</h2>
+                        <p>Se usa para agregar funciones a una definición incluso despues de haber declarado alguna instancia.</p>
+                        <pre style="font-size: 24px;"><code  class="hljs" data-trim contenteditable>
+a=new String('javascript');
+String.prototype.saludar=function(){
+    return 'hola Javascript!'
+}
+console.log(a.saludar());
+                        </code></pre>
+                        <p>Esto no se considera una practica recomendada. Para mas información <a href="http://stackoverflow.com/questions/12260375/javascript-overwriting-%20%20%20%20functions-prototype-bad-practice">Stackoverflow</a>.</p>
+                    </section>
+                    <section>
+                        <h2>Prototipos como herencia</h2>
+                        <p>Tambien puede servir para realizar herencia entre objetos.</p>
+                        <pre style="font-size: 24px;"><code  class="hljs" data-trim contenteditable>
+function A(){
+    this.a=100
+    this.x=function(){
+        return this.a
+}}
+function B(){this.b=100}
+B.prototype=new A()
+b=new B()
+console.log(b.x())
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Object.create</h2>
+                        <p>Construye un nuevo objeto a partir de un prototipo establecido.</p>
+                        <pre style="font-size: 24px;"><code  class="hljs" data-trim contenteditable>
+function A(){
+    this.f=function(){return 'asdf'}
+}
+a=new A()
+b=Object.create(a)
+console.log(b.f())
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Referencia</h2>
+                        <p>Los objetos son pasados por referencia, nunca son copiados</p>
+                        <pre style="font-size: 24px;"><code  class="hljs" data-trim contenteditable>
+var persona = {
+    nickname : "Vlady",
+}
+var x = persona;
+x.nickname = 'juanito';
+var apodo = persona.nickname;
+console.log(apodo);
+// nickname es 'juanito' porque x y persona
+// son referencias al mismo objeto.
+
+var a = {}, b = {}, c = {};
+// a, b y c son referenciados a 
+// diferentes objetos vacios.
+
+a = b = c = {};
+// a, b y c son refenciados a el
+// mismo objeto vacio.
+                        </code></pre>
                     </section>
                 </section>
                 <section>
