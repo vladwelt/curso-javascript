@@ -258,6 +258,89 @@
                             <li>Retos</li>
                         </ul>
                     </section>
+                    <section>
+                        <h2>Manipulacion de datos</h2>
+                    </section>
+                    <section>
+                        <h2>VAR</h2>
+                        <pre><code  class="hljs" data-trim contenteditable>
+    // var - palabra clave
+    var numero = 3;
+    var cadena = "mi cadena xD."
+    var visible = true;
+    var desconocido; // Undefined
+    var conocido = null;
+    var instructor = {
+        nombre : "Vladimir",
+        apellido : "Cespedes",
+        edad : "Desconocida",
+    }
+                        </code></pre>
+                        <p>Palabra clave para la declaración de una variable.</p>
+                    </section>
+                    <section>
+                        <h2>Number</h2>
+                        <h4>NaN</h4>
+                        <p>El valor NaN es un numero que es el resultado de una operacion que no puede producir un resultado normal.
+                        NaN no es igual a cualquier valor, incluyendo el mismo. Podemos detectar NaN con la funcion isNaN(Number).</p>
+                        <h4>Infinity</h4>
+                        <p>EL valor Infinity representa todos los valores mas grandes que 1.79769313486231570e+308.</p>
+                    </section>
+                    <section>
+                        <h2>Math</h2>
+                        <p>Math es el objeto que concentra multiples constantes y funciones matematicas.</p>
+                        <p>Mas referencia a la <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math" target="_blank">documentacion de Math</a>.</p>
+                    </section>
+                    <section>
+                        <h2>Cadenas de Texto</h2>
+                        <p>Se utilizan para almacenar caracteres, palabras y/o frases de texto. Para asignar el valor a la variable, se encierra el valor entre comillas dobles o simples, para delimitar su comienzo y su final:</p>
+                        <pre><code  class="hljs" data-trim contenteditable>
+// Ejemplo de cadenas de texto
+    var mensaje = "Este curso esta bueno!";
+    var mensaje_nuevo = 'Ahora usando comillas simples';
+    var texto1 = "Una frase con 'comillas simples' dentro";
+    var texto2 = 'Una frase con "comillas dobles" dentro';
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Escapadores</h3>
+                        <p style="font-size: 20px;">Existen otros caracteres que son difíciles de incluir en una variable de texto (tabulador, ENTER, etc.) Para resolver estos problemas, JavaScript define un mecanismo para incluir de forma sencilla caracteres especiales y problemáticos dentro de una cadena de texto.</p>
+                        <table style="font-size : 25px;">
+                            <tbody>
+                                <tr><th>\O      </th><th>The NULL character</th></tr>
+                                <tr><th>\b      </th><th>Backspace</th></tr>
+                                <tr><th>\t      </th><th>Horizontal tab</th></tr>
+                                <tr><th>\n      </th><th>Newline</th></tr>
+                                <tr><th>\v      </th><th>Vertical tab</th></tr>
+                                <tr><th>\f      </th><th>Form feed</th></tr>
+                                <tr><th>\r      </th><th>Carriage return</th></tr>
+                                <tr><th>\"      </th><th>Double quote</th></tr>
+                                <tr><th>\'      </th><th>Apostrophe or single quote</th></tr>
+                                <tr><th>\\      </th><th>Backslash</th></tr>
+                                <tr><th>\x[XX]  </th><th>The Latin-1</th></tr>
+                                <tr><th>\u[XXXX]</th><th>The Unicode character</th></tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <h3>Manipulacion de Cadenas</h3>
+                        <pre><code  class="hljs" data-trim contenteditable>
+var s = "hello, world"
+s.charAt(0)          // => "h"
+s.charAt(s.length-1) // => "d"
+s.substring(1,4)     // => "ell"
+s.slice(1,4)         // => "ell"
+s.slice(-3)          // => "rld"
+s.indexOf("l")       // => 2
+s.lastIndexOf("l")   // => 10
+s.indexOf("l", 3)    // => 3
+s.split(", ")        // => ["hello", "world"]
+s.replace("h", "H")  // => "Hello, world"
+s.toUpperCase()      // => "HELLO, WORLD"
+                        </code></pre>
+                    </section>
+                    <section>
+                    </section>
                 </section>
                 <section>
                     <section>
@@ -273,6 +356,9 @@
                             <li>JSON</li>
                             <li>Retos</li>
                         </ul>
+                    </section>
+                    <section>
+                        <h2></h2>
                     </section>
                 </section>
                 <section>
@@ -329,7 +415,8 @@
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
 				]
 			});
 		</script>
