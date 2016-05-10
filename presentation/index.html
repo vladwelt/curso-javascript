@@ -91,7 +91,7 @@
                         <h3>Interpretado en una pagina web</h3>
                     <pre><code class="hljs">
     <script>
-        alert('Hello World!');
+        //alert('Hello World!');
     </script>
 					</code></pre>
 
@@ -103,7 +103,7 @@
 					</code></pre>
                     <pre><code class="hljs">
     // miscript.js
-    alert('Hello World!');
+    //alert('Hello World!');
 					</code></pre>
 
 
@@ -628,7 +628,140 @@ a = b = c = {};
                         </ul>
                     </section>
                     <section>
-                        <h2></h2>
+                        <h2>Funciones</h2>
+                        <p>Lo <strong>mejor de JavaScript</strong> es la implementación de las funciones.</p>
+                        <p>Una función encierra un conjunto de sentencias.</p>
+                        <p>Las funciones son la unidad modular fundamental de JavaScript. Se utilizan para la reutilización de código, ocultación de información, y la composición.</p>
+                        <p>Las funciones se utilizan para especificar el comportamiento de los objetos. En general, el arte de la programación es la factorización de un conjunto de requisitos en un conjunto de funciones y estructuras de datos.
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Funciones</h2>
+                        <p>Las funciones se declaran con la palabra reservada function.</p>
+                        <img  width="650" src="function.png"></img>
+                    </section>
+                    <section>
+                        <h2>Asignación</h2>
+                        <p>Una función puede ser asignada a una variable.</p>
+                        <pre style="font-size: 24px;"><code  class="hljs" data-trim contenteditable>
+var f = function(x) {
+    console.log(x)
+}
+f(10);
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Autoejecutable</h2>
+                        <p>Como una función puede ser asignada a una variable, es posible que una función reciba otras funciones como parte de sus parametros.</p>
+                        <pre style="font-size: 24px;"><code  class="hljs" data-trim contenteditable>
+function f(x,g){
+    return g(x)
+}
+ 
+var a = f(2,function(x){return x*3})
+console.log(a) // 6
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Autoinvocación</h2>
+                        <p>Ademas una función puede definirse de forma anonima, ademas de ejecutarse en la misma sentencia de su definición.</p>
+                        <pre style="font-size: 24px;"><code  class="hljs" data-trim contenteditable>
+var a=(function(x,y){
+    return x+y
+}(1,2))
+
+console.log(a) // 3
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Funciones internas</h2>
+                        <p>Otra caracteristica importante sobre las funciones en JavaScript, es que puede definirse una función dentro de otra función.</p>
+                        <pre style="font-size: 24px;"><code  class="hljs" data-trim contenteditable>
+function a(){
+    var x=10
+    function b(){
+        return x+1
+    }
+    return b()
+}
+console.log(a())
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Varargs</h2>
+                        <p>Al igual que en el lenguaje de programación Java, una función puede ser invocada con mas parametros de los que han sido definidos, o inclusive con menos.</p>
+                        <p>Todas los parametros que han sido enviados a una función pueden ser accedidos a esta por el arreglo objeto "arguments".</p>
+                        <pre style="font-size: 24px;"><code  class="hljs" data-trim contenteditable>
+function a(){
+    console.log(arguments)
+}
+ 
+a(1,2,3,4,5,6)
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Hoisting</h2>
+                        <p>Las variables en JavaScript, tienen ambito de función, esto significa que todas las variables declaradas en una función son visibles a travez del cuerpo de la función. Esto significa que las variables son incluso visibles antes de ser declaradas.</p>
+                        <p>Referencias a <a href="http://www.adequatelygood.com/JavaScript-Scoping-and-Hoisting.html">adequatelygood</a></p>
+                    </section>
+                    <section>
+                        <h2>Hoisting</h2>
+                        <p>Ejemplos:</p>
+                        <pre style="font-size: 24px;"><code  class="hljs" data-trim contenteditable>
+var a='asdf';
+(function b(){
+    console.log(a)
+})() // asdf
+                        </code></pre>
+                        <pre style="font-size: 24px;"><code  class="hljs" data-trim contenteditable>
+var a='asdf';
+(function b(){
+    console.log(a)
+    var a='qwer'
+})() // undefined
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>scope</h2>
+                        <p>ambito(scope) de aplicación en un lenguaje de programación controla la visibilidad y la vida útil de las variables y parámetros. este es un servicio importante para el programador, ya que reduce las colisiones de nombres y proporciona gestión automática de memoria:</p>
+                    </section>
+                    <section>
+                        <h2>scope</h2>
+                        <pre style="font-size: 24px;"><code  class="hljs" data-trim contenteditable>
+var foo = function() {
+var a = 3, b = 5;
+var bar = function() {
+var b = 7, c = 11;
+// At this point, a is 3, b is 7, and c is 11
+a += b + c;
+// At this point, a is 21, b is 7, and c is 11
+};
+// At this point, a is 3, b is 5, and c is not defined
+bar( );
+// At this point, a is 21, b is 5
+};
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Closure</h2>
+                        <p>Las buenas noticias sobre el alcance es que las funciones internas tienen acceso a los parámetros y variables de las funciones que están definidas dentro (con la excepción de <span class="fragment highlight-blue">this</span> y <span class="fragment highlight-blue">arguments</span>).</p>
+                    </section>
+                    <section>
+                        <h2>Closure</h2>
+                        <p>Ejemplo</p>
+                        <pre style="font-size: 24px;"><code  class="hljs" data-trim contenteditable>
+var myObject = function () {
+    var value = 0;
+    return {
+        increment: function (inc) {
+            value += typeof inc === 'number' ? inc : 1;
+        },
+        getValue: function ( ) {
+            return value;
+        }
+    };
+}();
+                        </code></pre>
                     </section>
                 </section>
                 <section>
