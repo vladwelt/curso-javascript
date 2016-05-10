@@ -436,6 +436,7 @@ switch(expresion) {
                             <tbody>
                                 <tr><th>Que pida un número y diga si es par o impar.</th></tr>
                                 <tr><th>Que pida un número del 1 al 7 y diga el día de la semana correspondiente.</th></tr>
+                                <tr><th>Que pida un número y diga si es positivo y negativo.</th></tr>
 
                             </tbody>
                         </table>
@@ -620,9 +621,7 @@ a = b = c = {};
                         <h2>Objetivos</h2>
                         <ul>
                             <li>Funciones</li>
-                            <li>Hoisting</li>
                             <li>Clases</li>
-                            <li>Prototype</li>
                             <li>JSON</li>
                             <li>Retos</li>
                         </ul>
@@ -688,6 +687,25 @@ console.log(a())
                         </code></pre>
                     </section>
                     <section>
+                        <h2>TOOLS</h2>
+                        <h3>Date</h3>
+                        <p><strong>Date</strong> es el objeto utilizado para la representación de fechas.</p>
+                        <p>Internamente, esta representación es un número que representa una cuenta de los milisegundos transcurridos desde la fecha: 1 de enero de 1970.</p>
+                        <p>Pueden verse mas sobre los sistema de tiempo en: <a href="https://en.wikipedia.org/wiki/System_time">System Time en Wikipedia</a>.</p>
+                    </section>
+                    <section>
+                        <h2>A Desarrollar</h2>
+                        <h4>Ejercicios</h4>
+                        <table>
+                            <tbody>
+                                <tr><th>Operaciones matematicas</th></tr>
+                                <tr><th>Invertir un String</th></tr>
+                                <tr><th>fibbonaci</th></tr>
+                                <tr><th>Que detecte si un número es primo, utilizar recursividad.</th></tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
                         <h2>Varargs</h2>
                         <p>Al igual que en el lenguaje de programación Java, una función puede ser invocada con mas parametros de los que han sido definidos, o inclusive con menos.</p>
                         <p>Todas los parametros que han sido enviados a una función pueden ser accedidos a esta por el arreglo objeto "arguments".</p>
@@ -723,22 +741,22 @@ var a='asdf';
                     </section>
                     <section>
                         <h2>scope</h2>
-                        <p>ambito(scope) de aplicación en un lenguaje de programación controla la visibilidad y la vida útil de las variables y parámetros. este es un servicio importante para el programador, ya que reduce las colisiones de nombres y proporciona gestión automática de memoria:</p>
+                        <p>Ambito(scope) de aplicación en un lenguaje de programación controla la visibilidad y la vida útil de las variables y parámetros. este es un servicio importante para el programador, ya que reduce las colisiones de nombres y proporciona gestión automática de memoria:</p>
                     </section>
                     <section>
                         <h2>scope</h2>
                         <pre style="font-size: 24px;"><code  class="hljs" data-trim contenteditable>
-var foo = function() {
-var a = 3, b = 5;
-var bar = function() {
-var b = 7, c = 11;
-// At this point, a is 3, b is 7, and c is 11
-a += b + c;
-// At this point, a is 21, b is 7, and c is 11
-};
-// At this point, a is 3, b is 5, and c is not defined
-bar( );
-// At this point, a is 21, b is 5
+var funcion1 = function() {
+    var a = 3, b = 5;
+    var funcion2 = function() {
+        var b = 7, c = 11;
+        // En este punto, a es 3, b es 7, y c e 11
+        a += b + c;
+        // En este punto, a es 21, b es 7, y c es 11
+    };
+    // En este punto, a es 3, b es 5, y c no esta definido
+    funcion2();
+    // En este punto, a es 21, b es 5
 };
                         </code></pre>
                     </section>
@@ -750,18 +768,90 @@ bar( );
                         <h2>Closure</h2>
                         <p>Ejemplo</p>
                         <pre style="font-size: 24px;"><code  class="hljs" data-trim contenteditable>
-var myObject = function () {
-    var value = 0;
+var myObjeto = function () {
+    var valor = 0;
     return {
-        increment: function (inc) {
-            value += typeof inc === 'number' ? inc : 1;
+        incrementar: function (inc) {
+            valor += typeof inc === 'number' ? inc : 1;
         },
-        getValue: function ( ) {
-            return value;
+        getValue: function () {
+            return valor;
         }
     };
 }();
                         </code></pre>
+                    </section>
+                    <section>
+                        <h2>Clases</h2>
+                        <p>Una clase en JavaScript es una colección de objetos que heredan propiedades de un mismo prototipo.</p>
+                        <pre style="font-size: 24px;"><code  class="hljs" data-trim contenteditable>
+function A(){
+    this.a=10
+    this.b=11
+}
+a=new A()
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Tools</h2>
+                        <h3>instanceof</h3>
+                        <p>Verifica si un objeto es instancia de algún prototipo.</p>
+                        <h3>typeof</h3>
+                        <p>Retorna una cadena indicando el tipo de dato que tiene una variable.</p>
+                    </section>
+                    <section>
+                        <h2>A Desarrollar</h2>
+                        <h4>Ejercicios</h4>
+                        <table>
+                            <tbody>
+                                <tr><th>Crear un objeto persona, que muetre su nombre completo.</th></tr>
+                                <tr><th>Editar el objeto persona, y verificar que su carnet de identidad sea valido.</th></tr>
+                                <tr><th>Crear un objeto empresa, que pueda agregar empleados, calcular la media de salarios.</th></tr>
+                                <tr><th>Crear un objeto biblioteca, que pueda agregar libros, eliminar libros, prestar libros,saber el estado del libro.</th></tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <h1>JSON</h1>
+                    </section>
+                    <section>
+                        <h2>JSON</h2>
+                        <p>JSON, acrónimo de JavaScript Object Notation, es un formato de texto ligero para el intercambio de datos. JSON es un subconjunto de la notación literal de objetos de JavaScript aunque hoy, debido a su amplia adopción como alternativa a XML, se considera un formato de lenguaje independiente.</p>
+                        <p>Referencia: <a href="https://es.wikipedia.org/wiki/JSON">JSON en Wikipedia</a></p>
+                    </section>
+                    <section>
+                        <h2>JSON</h2>
+                        <p>Ejemplo</p>
+                        <pre style="font-size: 24px;"><code  class="hljs" data-trim contenteditable>
+{"menu": {
+    "id": "file",
+    "value": "File",
+    "popup": {
+        "menuitem": [
+            {"value": "New", "onclick": "CreateNew()"},
+            {"value": "Open", "onclick": "Open()"},
+            {"value": "Close", "onclick": "Close()"}
+        ]
+        }
+    }
+}
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h3>Transformación</h3>
+                        <p>Existen dos métodos para la transformación entre JSON y Objetos de JavaScript.</p>
+                        <p><strong>JSON.stringify</strong> <span class="fragment highlight-blue">OBJECT -> JSON</span></p>
+                        <p>Retorna una cadena en formato JSON correspondiente a un valor especificado.</p>
+                        <p><strong>JSON.parse</strong> <span class="fragment highlight-blue">JSON -> OBJETO</span></p>
+                        <p>Interpreta una cadena en formato JSON a su objeto correspondiente.</p>
+                    </section>
+                    <section>
+                        <h2>Retos</h2>
+                        <ul>
+                            <li>Crear objeto persona, ingresar la fecha y calcular la edad.</li>
+                            <li>Un banco tiene n clientes que pueden hacer depósitos y extracciones. También el banco requiere que al final del día calcule la cantidad de dinero que hay depositada.</li>
+                            <li>Crear un objeto empresa y que pueda agregar empleados con diferentes cargos jerarquicos y que pueda definir su salario segun al cargo.</li>
+                        </ul>
                     </section>
                 </section>
                 <section>
