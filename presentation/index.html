@@ -59,12 +59,12 @@
                     </section>
                     <section>
                         <h3>JavaScript es un lenguaje del lado del cliente</h3>
-                        <img  width="650" src="client-server.jpg"></img>
+                        <img  width="650" src="img/client-server.jpg"></img>
                     </section>
                     <section>
                         <h2>DISEÑO WEB</h2>
                     </section>
-                    <section data-background-transition="zoom" data-background="html.png" data-background-size="90vw">
+                    <section data-background-transition="zoom" data-background="img/html.png" data-background-size="90vw">
                     </section>
                     <section>
                         <h2>DISEÑO WEB</h2>
@@ -76,16 +76,6 @@
                             <li class="fragment">Comportamiento</li>
                             <p class="fragment">JS</p>
                         </ul>
-                    </section>
-                    <section>
-                        <h2>A Desarrollar</h2>
-                        <h4>Ejecucion del codigo</h4>
-                        <table>
-                            <tbody>
-                                <tr><th>Interpretado en la pagina web</th></tr>
-                                <tr><th>Interpretado en la consola</th></tr>
-                            </tbody>
-                        </table>
                     </section>
                     <section>
                         <h3>Interpretado en una pagina web</h3>
@@ -107,6 +97,16 @@
 					</code></pre>
 
 
+                    </section>
+                    <section>
+                        <h2>A Desarrollar</h2>
+                        <h4>Ejecucion del codigo</h4>
+                        <table>
+                            <tbody>
+                                <tr><th>Interpretado en la pagina web</th></tr>
+                                <tr><th>Interpretado en la consola</th></tr>
+                            </tbody>
+                        </table>
                     </section>
                     <section>
                         <h2>ESTRUCTURA DEL LENGUAJE</h2>
@@ -637,7 +637,7 @@ a = b = c = {};
                     <section>
                         <h2>Funciones</h2>
                         <p>Las funciones se declaran con la palabra reservada function.</p>
-                        <img  width="650" src="function.png"></img>
+                        <img  width="650" src="img/function.png"></img>
                     </section>
                     <section>
                         <h2>Asignación</h2>
@@ -700,7 +700,7 @@ console.log(a())
                             <tbody>
                                 <tr><th>Operaciones matematicas</th></tr>
                                 <tr><th>Invertir un String</th></tr>
-                                <tr><th>fibbonaci</th></tr>
+                                <tr><th>Que escriba la sucesión de Fibonacci, hasta un numero n,  utilizar recursividad.</th></tr>
                                 <tr><th>Que detecte si un número es primo, utilizar recursividad.</th></tr>
                             </tbody>
                         </table>
@@ -866,6 +866,108 @@ a=new A()
                             <li>Retos</li>
                         </ul>
                     </section>
+                    <section>
+                        <h2>Window</h2>
+                        <p>The objeto Window es el mas alto nivel de objetos JavaScript que corresponden a la ventana del navegador.</p>
+                        <p>Mas Referencia <a href="https://developer.mozilla.org/es/docs/Web/API/Window">Window Object</a></p>
+                    </section>
+                    <section>
+                        <h2>API Window</h2>
+                        <table>
+                            <tbody>
+                                <tr><th>location</th><th>Objeto que representa la url actual.</th></tr>
+                                <tr><th>history</th><th>back - forward - go</th></tr>
+                                <tr><th>navigator</th><th>Provee información relacionada al navegador.</th></tr>
+                                <tr><th>screen</th><th>Provee información relacionada a la resolución de pantalla.</th></tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <h2>Cuadros de dialogo</h2>
+                        <pre style="font-size: 30px;"><code  class="hljs" data-trim contenteditable>
+// alerta
+alert(mensaje)
+// ventana de confirmacion
+res=confirm(mensaje)
+// ventana de dialogo
+res=prompt(mensaje,valor)
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Timers</h2>
+                        <p>Son funciones que son invocadas despues de un tiempo determinado.</p>
+                        <table>
+                            <tbody>
+                                <tr><th>setTimeout()</th><th>Planifica la invocación despues de un tiempo determinado.</th></tr>
+                                <tr><th>setInterval()</th><th>Planifica la invocación despues de un intervalo.</th></tr>
+                                <tr><th>clearTimeout() y clearInterval()</th><th>Limpia tareas puestas en el planificador.</th></tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <h3>Ejemplos</h3>
+                        <pre style="font-size: 30px;"><code  class="hljs" data-trim contenteditable>
+setTimeout(function(){
+    alert('asdf')
+},8000);
+                        </code></pre>
+                        <pre style="font-size: 30px;"><code  class="hljs" data-trim contenteditable>
+setInterval(function(){
+    alert('asdf')
+},3000);
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>DOM</h2>
+                        <p>DOM (Document Object Model), es una <span class="fragment highlight-blue">interfaz de programación</span> para documentos en HTML y XML.</p>
+                    </section>
+                    <section>
+                        <h2>DOM</h2>
+                        <p>Provee una representación estructurada del documento (en forma de una <span class="fragment highlight-blue">estrucura de arbol</span>).</p>
+                    </section>
+                    <section>
+                        <h2>DOM</h2>
+                        <p>Ademas define una manera para que la estructura pueda ser accedida, ademas de poder modificar su estilo o contenido.</p>
+                    </section>
+                    <section>
+                        <h2>DOM</h2>
+                        <p>DOM permite un acceso a la estructura de una página HTML mediante el mapeo de los elementos de esta página en un árbol de nodos. Cada elemento se convierte en un nodo y cada porción de texto en un nodo de texto.</p>
+                    </section>
+                    <section>
+                        <h2>API DOM</h2>
+                        <p>La manipulación del contenido en el navegador depende de un conjunto de funciones y atributos que son provistos por el objeto <span class="fragment highlight-blue">document</span>, que es de tipo HTMLDocument.</p>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document">Referencia (Document)</a>
+                        <br/>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Referencia (Element)</a>
+                    </section>
+                    <section>
+                        <h2>Representación de un documento HTML</h2>
+                        <img  width="1000" src="img/dom.svg"></img>
+                    </section>
+                    <section>
+                        <h2>Notación de navegación</h2>
+                        <img  width="1000" src="img/notacion.svg"></img>
+                    </section>
+                    <section>
+                        <h2>Notación de XML</h2>
+                        <img  width="1000" src="img/xml.svg"></img>
+                    </section>
+                    <section>
+                        <h2>Jerarquia de clases DOM</h2>
+                        <img  width="1000" src="img/dom1.png"></img>
+                    </section>
+                    <section>
+                        <h2>Selectores</h2>
+                        <table>
+                            <tbody>
+                                <tr><th>document.getElementById(id)</th></tr>
+                                <tr><th>document.getElementsByName(name)</th></tr>
+                                <tr><th>document.getElementsByTagName(tagname)</th></tr>
+                                <tr><th>document.getElementByClassName(classname)</th></tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    
                 </section>
                 <section>
                     <section>
