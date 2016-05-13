@@ -615,7 +615,7 @@ a = b = c = {};
                 </section>
                 <section>
                     <section>
-                        <h1>DIA 2</h2>
+                        <h1>DIA 2 y 3</h2>
                     </section>
                     <section>
                         <h2>Objetivos</h2>
@@ -650,7 +650,7 @@ f(10);
                         </code></pre>
                     </section>
                     <section>
-                        <h2>Autoejecutable</h2>
+                        <h2>Funciones como parametros</h2>
                         <p>Como una función puede ser asignada a una variable, es posible que una función reciba otras funciones como parte de sus parametros.</p>
                         <pre style="font-size: 24px;"><code  class="hljs" data-trim contenteditable>
 function f(x,g){
@@ -856,7 +856,7 @@ a=new A()
                 </section>
                 <section>
                     <section>
-                        <h1>DIA 3</h2>
+                        <h1>DIA 4</h2>
                     </section>
                     <section>
                         <h2>Objetivos</h2>
@@ -963,7 +963,7 @@ setInterval(function(){
                                 <tr><th>document.getElementById(id)</th></tr>
                                 <tr><th>document.getElementsByName(name)</th></tr>
                                 <tr><th>document.getElementsByTagName(tagname)</th></tr>
-                                <tr><th>document.getElementByClassName(classname)</th></tr>
+                                <tr><th>document.getElementsByClassName(classname)</th></tr>
                             </tbody>
                         </table>
                     </section>
@@ -1003,18 +1003,112 @@ setInterval(function(){
                             </tbody>
                         </table>
                     </section>
-                </section>
-                <section>
                     <section>
-                        <h1>DIA 4</h2>
+                        <h2>Atributos</h2>
+                        <p>Existen metodos especificos para el acceso a los atributos de un elemento.</p>
+                        <table>
+                            <tbody>
+                                <tr><th>getAttribute</th></tr>
+                                <tr><th>setAttribute</th></tr>
+                                <tr><th>hasAttribute</th></tr>
+                                <tr><th>removeAttribute</th></tr>
+                            </tbody>
+                        </table>
                     </section>
                     <section>
-                        <h2>Objetivos</h2>
-                        <ul>
-                            <li>Eventos</li>
-                            <li>AJAX</li>
-                            <li>Retos</li>
-                        </ul>
+                        <h2>Manipulación del contenido</h2>
+                        <table>
+                            <tbody>
+                                <tr><th>innerHTML</th></tr>
+                                <tr><th>outerHTML</th></tr>
+                                <tr><th>
+                                    <p>insertAdjacentHTML</p>
+                                    <ul>
+                                        <li>beforebegin</li>
+                                        <li>afterbegin</li>
+                                        <li>beforeend</li>
+                                        <li>afterend</li>
+                                    </ul>
+                                </th></tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <h2>Manipulación del contenido</h2>
+                        <p>Para acceder al contenido de un elemento, existen dos metodos, dependiendo si se trata como HTML Element o Node.</p>
+                        <table>
+                            <tbody>
+                                <tr><th>textContext</th><th>para HTMLElement</th></tr>
+                                <tr><th>data</th><th>para node</th></tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <h2>Creacion de nodos</h2>
+                        <p>Existen tres metodos para la creación de nuevos nodos.</p>
+                        <table>
+                            <tbody>
+                                <tr><th>createElement</th></tr>
+                                <tr><th>createTextNode</th></tr>
+                                <tr><th>cloneNode</th></tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <h2>Manipulación de elementos</h2>
+                        <p>Se poseen varias funciones para la manipulacion de nodos en el arbol.</p>
+                        <table>
+                            <tbody>
+                                <tr><th>appendChild</th></tr>
+                                <tr><th>insertBefore</th></tr>
+                                <tr><th>removeChild</th></tr>
+                                <tr><th>replaceChild</th></tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <h2>Formularios</h2>
+                        <p>Los formularios pueden accederse como cualquier otro elemento, ademas existe el parametro 'document.forms'</p>
+                        <p>Estos pueden ser accedidos por sus atributos name e id.</p>
+                        <p>Para acceder a los elementos del formulario, se utiliza la variable 'elements'.</p>
+                        <pre style="font-size: 35px;"><code  class="hljs" data-trim contenteditable>
+document.forms.name.element.input
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Estilos</h2>
+                        <p>Para la modificacion de propiedades de hoja de estilo, se tiene la la propiedad 'style'.</p>
+                        <p>Ademas que es posible estructurar un documento de forma que puedan cambiarse su clases y estos reflejen cambios en la presentación de documentos.</p>
+                        <pre style="font-size: 35px;"><code  class="hljs" data-trim contenteditable>
+document.querySelector('selector').style
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>Eventos</h2>
+                        <p>Un evento es algo que desencadena una acción especifica en el navegador.</p>
+                        <p>Usualmente un evento ocurre cuando un usuario:</p>
+                        <table>
+                            <tbody>
+                                <tr><th>Device-dependent input events.</th><th>Teclado, raton, dispositivos Touch.</th></tr>
+                                <tr><th>Device-independent input events</th><th>Click.</th></tr>
+                                <tr><th>User interface events</th><th>Foco, cambios, submit.</th></tr>
+                                <tr><th>State-change events</th><th>Cambio de estado en general.</th></tr>
+                                <tr><th>API-specific events</th><th>DnD, Players.</th></tr>
+                                <tr><th>Timers and error handlers</th><th>Temporizadores, errores.</th></tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <h2>Captura de eventos</h2>
+                        <p>Existen dos métodos para el registro de eventos.</p>
+                        <pre style="font-size: 35px;"><code  class="hljs" data-trim contenteditable>
+b.onclick=function(){console.log('asdf')}
+
+b.addEventListener('click',function(){
+    console.log('asd')
+},false)
+                        </code></pre>
+                        <a href="http://www.quirksmode.org/js/events_mouse.html">Mas informacion</a>
                     </section>
                 </section>
                 <section>
@@ -1024,8 +1118,9 @@ setInterval(function(){
                     <section>
                         <h2>Objetivos</h2>
                         <ul>
-                            <li>REST</li>
-                            <li>SPA</li>
+                            <li>Eventos</li>
+                            <li>AJAX</li>
+                            <li>Retos</li>
                         </ul>
                     </section>
                 </section>
