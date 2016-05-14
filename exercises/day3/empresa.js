@@ -19,7 +19,7 @@ var biblioteca = {
             code : nuevo_code,
             nombre : nuevo_nombre,
             anio : nuevo_anio,
-            prestado : false;
+            prestado : false,
         }
         this.libros[nuevo_code] = nuevo_libro;
     },
