@@ -1,0 +1,15 @@
+{
+  "name": "taller",
+  "version": "1.0.0",
+  "description": "REST ",
+  "main": "server.js",
+  "dependencies": {
+      "express": "~4.0.0",
+      "body-parser": "~1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "@vladwelt"
+}
