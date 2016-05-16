@@ -48,7 +48,7 @@ router.route('/libros/:libro_id')
         }
     })
     .delete(function(req, res) {
-        var _id = req.params.libro_id;
+        var _id = parseInt(req.params.libro_id);
         var respuesta = Biblioteca.eliminar(_id);
         if(respuesta) {
             res.json({ message: 'libro eliminado' });
