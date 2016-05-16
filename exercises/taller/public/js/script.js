@@ -1,9 +1,9 @@
-console.log("se cargo!");
-var get = function() {
+var get = function(ejecutor) {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', encodeURI(window.location.origin + '/api/libros'));
     xhr.onload = function() {
-        console.log(xhr.responseText);
+        console.log("GET");
+        ejecutor(xhr.responseText);
     };
     xhr.send();
 }
@@ -46,4 +46,21 @@ var remove = function(id) {
         console.log(xhr.responseText);
     };
     xhr.send();
+}
+
+
+var miboton = document.getElementById("miboton");
+var milista = document.getElementById("milista");
+miboton.onclick = function(){
+    get(function(datos){
+        var data = JSON.parse(datos);
+
+        for(var i=0; i<data.length; i++){
+            var libro = data[i];
+            console.log(data[i]);
+            var item = document.createElement("li");
+            item.innerHTML = libro.nombre;
+            milista.appendChild(item);
+        }
+    });
 }
