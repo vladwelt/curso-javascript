@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(express.static(__dirname + '/public'));
 
 var port = process.env.PORT || 8080;
 
@@ -12,7 +13,7 @@ var router = express.Router();
 var Biblioteca = require('./models/biblioteca');
 
 router.get('/', function(req, res) {
-    res.json({ message: 'hooray! welcome to our api!' });   
+    res.sendfile(__dirname + '/public/index.html');
 });
 
 router.route('/libros')
