@@ -39,10 +39,11 @@ var put = function(id, nombre) {
     xhr.send(encodeURI('nombre=' + nombre));
 }
 
-var remove = function(id) {
+var remove = function(id, ejecutor) {
     var xhr = new XMLHttpRequest();
     xhr.open('DELETE', encodeURI(window.location.origin + '/api/libros/' + id));
     xhr.onload = function() {
+        ejecutor();
         console.log(xhr.responseText);
     };
     xhr.send();
@@ -51,16 +52,34 @@ var remove = function(id) {
 
 var miboton = document.getElementById("miboton");
 var milista = document.getElementById("milista");
+var show  = function() {
+    var buttons = document.getElementsByClassName("item");
+    for(var i=0; i< buttons.length; i++) {
+        buttons[i].onclick = function() {
+            var self = this;
+            var id = this.getAttribute("id");
+            console.log(id);
+            remove(id, function() {
+               self.parentNode.outerHTML = "";
+            });
+        }
+    }
+}
+
 miboton.onclick = function(){
     get(function(datos){
+        milista.innerHTML = "";
         var data = JSON.parse(datos);
-
+        console.log(data);
         for(var i=0; i<data.length; i++){
             var libro = data[i];
             console.log(data[i]);
             var item = document.createElement("li");
-            item.innerHTML = libro.nombre;
+            item.innerHTML = libro.nombre +
+                '<button class="item" id="'
+                + libro.id +'" >x</button>';
             milista.appendChild(item);
         }
+        show();
     });
 }
