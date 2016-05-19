@@ -8,13 +8,13 @@ var get = function(ejecutor) {
     xhr.send();
 }
 
-var post = function(nombre, anio, autor){
+var post = function(nombre, anio, autor, ejecutor){
     var xhr = new XMLHttpRequest();
     xhr.open('POST',encodeURI(window.location.origin + '/api/libros'));
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onload = function() {
         if (xhr.status === 200) {
-            console.log("Peticion exitosa " + xhr.responseText);
+            ejecutor(xhr.responseText);
         }
         else if (xhr.status !== 200) {
             console.log("Peticion rechazada");
@@ -27,15 +27,11 @@ var put = function(id, nombre) {
     var xhr = new XMLHttpRequest();
     xhr.open('PUT', window.location.origin + '/api/libros/' + id);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    //xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.onload = function() {
         if (xhr.status === 200) {
             console.log(JSON.parse(xhr.responseText));
         }
     };
-    //xhr.send(JSON.stringify({
-    //    nombre : nombre
-    //}));
     xhr.send(encodeURI('nombre=' + nombre));
 }
 
@@ -49,37 +45,46 @@ var remove = function(id, ejecutor) {
     xhr.send();
 }
 
-
-var miboton = document.getElementById("miboton");
 var milista = document.getElementById("milista");
-var show  = function() {
-    var buttons = document.getElementsByClassName("item");
-    for(var i=0; i< buttons.length; i++) {
-        buttons[i].onclick = function() {
-            var self = this;
-            var id = this.getAttribute("id");
-            console.log(id);
-            remove(id, function() {
-               self.parentNode.outerHTML = "";
-            });
-        }
-    }
-}
+var boton_formulario = document.getElementById("submit");
 
-miboton.onclick = function(){
-    get(function(datos){
+var show  = function() {
+    get(function(datos) {
         milista.innerHTML = "";
         var data = JSON.parse(datos);
-        console.log(data);
         for(var i=0; i<data.length; i++){
             var libro = data[i];
-            console.log(data[i]);
             var item = document.createElement("li");
-            item.innerHTML = libro.nombre +
-                '<button class="item" id="'
+            item.innerHTML = libro.nombre 
+                + '<button class="item" id="'
                 + libro.id +'" >x</button>';
             milista.appendChild(item);
         }
+        var buttons = document.getElementsByClassName("item");
+        for(var i=0; i< buttons.length; i++) {
+            buttons[i].onclick = function() {
+                var self = this;
+                var id = this.getAttribute("id");
+                remove(id, function() {
+                   self.parentNode.outerHTML = "";
+                });
+            }
+        }
+    });
+
+}
+
+boton_formulario.onclick = function() {
+    var datos = document.forms["miform"].elements;
+    var nombre = datos.nombre.value; 
+    var anio = datos.anio.value;
+    var autor = datos.autor.value;
+    post(nombre, anio, autor, function() {
+        document.forms["miform"].elements.nombre.value = "";
+        document.forms["miform"].elements.anio.value = "";
+        document.forms["miform"].elements.autor.value = "";
+        console.log("exitosa!");
         show();
     });
 }
+//Hay muchas formas de resolver....
